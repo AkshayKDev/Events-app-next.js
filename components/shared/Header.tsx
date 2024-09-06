@@ -8,7 +8,7 @@ const Header = () => {
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">
         <Link className="w-36" href="/">
-          <Image src="" alt="" />
+          <Image src="/images/logo.svg" alt="logo" width={128} height={38} />
         </Link>
         <div className="">
           <SignedOut>
