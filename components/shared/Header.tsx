@@ -1,7 +1,8 @@
-import { SignedOut } from "@clerk/nextjs";
+import { SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import NavItems from "./NavItems";
 
 const Header = () => {
   return (
@@ -10,7 +11,18 @@ const Header = () => {
         <Link className="w-36" href="/">
           <Image src="/images/logo.svg" alt="logo" width={128} height={38} />
         </Link>
+
+        <SignedIn>
+          <nav className="md:flex-between hidden w-full max-w-xs">
+            <NavItems />
+          </nav>
+        </SignedIn>
+        
         <div className="">
+          <SignedIn>
+            <UserButton />
+            <NavItems />
+          </SignedIn>
           <SignedOut>
             <Button asChild className="rounded-full" size="lg">
               <Link href="/sign-in">Login</Link>
